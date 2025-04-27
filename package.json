@@ -1,0 +1,11 @@
+{
+  "name": "testrepository",
+  "version": "1.0.0",
+  "description": "A simple empty Node.js project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "author": "",
+  "license": "ISC"
+}
