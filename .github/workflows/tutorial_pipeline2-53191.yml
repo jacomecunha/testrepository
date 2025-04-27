@@ -1,0 +1,24 @@
+# Generated CI/CD Pipeline YAML
+# This YAML is compatible with GitHub Actions
+
+# Pipeline: tutorial_pipeline2
+name: tutorial_pipeline2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    # Build and test the application
+    runs-on: ubuntu-latest
+    steps:
+            - name: command_26820
+              uses: actions/checkout@v4
+            - name:  Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                        node-version: '20'
+            - name: Check Node.js and npm versions
+              run: |
+                node --version
+                npm --version
