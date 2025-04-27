@@ -1,0 +1,26 @@
+# Generated CI/CD Pipeline YAML
+# This YAML is compatible with GitHub Actions
+
+# Pipeline: tutorial_pipeline
+name: tutorial_pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_test:
+    # Build and test the application
+    runs-on: ubuntu-latest
+    steps:
+            - name: command_17585
+              uses: actions/checkout@v4
+            - name: Setup Python
+              uses: actions/setup-python@v4
+              with:
+                         python-version: '3.9'
+            - name: Install dependencies
+              run: pip install -r requirements.txt
+            - name: Check Python version
+              run: |
+                python --version
+                python -c "import sys; print(f'Full version: {sys.version}')"
