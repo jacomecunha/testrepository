@@ -1,0 +1,221 @@
+{
+  "blocks": {
+    "languageVersion": 0,
+    "blocks": [
+      {
+        "type": "ecore_pipeline",
+        "id": "z[Ib{|:nKA_X-((s~Y7y",
+        "x": -70,
+        "y": 690,
+        "fields": {
+          "ATTR_NAME": "tutorial_pipeline",
+          "ATTR_CONCURRENT": false
+        },
+        "inputs": {
+          "CONT_WHEN": {
+            "block": {
+              "type": "ecore_when",
+              "id": "DTaRHa_sIjpJ}I/yuaf3",
+              "fields": {
+                "ATTR_NAME": "bla",
+                "ATTR_TRIGGER": "workflow_dispatch",
+                "ATTR_TIMER": ""
+              }
+            }
+          },
+          "CONT_JOB": {
+            "block": {
+              "type": "ecore_job",
+              "id": "g9%$Xvx-66h,Oh/PL!Ki",
+              "fields": {
+                "ATTR_NAME": "build_test",
+                "ATTR_ALLOWFAILURE": false,
+                "ATTR_DESCRIPTION": "Build and test the instalation"
+              },
+              "inputs": {
+                "CONT_TOOL": {
+                  "block": {
+                    "type": "ecore_tool",
+                    "id": "fU!MZF|^*4yx9Zdg+SXA",
+                    "fields": {
+                      "ATTR_NAME": "ubuntu-latest"
+                    }
+                  }
+                },
+                "CONT_COMMAND": {
+                  "block": {
+                    "type": "ecore_command",
+                    "id": "v/:A=M+O0|oFd1MHc;*u",
+                    "fields": {
+                      "ATTR_NAME": ""
+                    },
+                    "inputs": {
+                      "CONT_TOOL": {
+                        "block": {
+                          "type": "ecore_tool_value",
+                          "id": "^R:d2:U{15KAu@KM.]Xl",
+                          "fields": {
+                            "ATTR_NAME": "actions/checkout@v4"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "ecore_command",
+                        "id": "ya-AC,^9OW%|}t{h,v{P",
+                        "fields": {
+                          "ATTR_NAME": ""
+                        },
+                        "inputs": {
+                          "CONT_TOOL": {
+                            "block": {
+                              "type": "ecore_tool_value",
+                              "id": ";rZSfDg-Af(0#m=q]JM=",
+                              "fields": {
+                                "ATTR_NAME": "actions/setup-node@v3"
+                              }
+                            }
+                          },
+                          "CONT_PARAMETER": {
+                            "block": {
+                              "type": "ecore_parameter",
+                              "id": "q~$q:rWyiGkL|^kYVO@7",
+                              "fields": {
+                                "ATTR_PARAMETER": "20"
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "ecore_command",
+                            "id": "p,GcLan=%tN,jgU]w~kM",
+                            "fields": {
+                              "ATTR_NAME": "run"
+                            },
+                            "inputs": {
+                              "CONT_TOOL": {
+                                "block": {
+                                  "type": "ecore_tool_value",
+                                  "id": "_]tvuLJiaU3y#C-`;^3s",
+                                  "fields": {
+                                    "ATTR_NAME": "yarn"
+                                  }
+                                }
+                              },
+                              "CONT_PARAMETER": {
+                                "block": {
+                                  "type": "ecore_parameter",
+                                  "id": "h=)tD$@:Orn[`[YCN`{:",
+                                  "fields": {
+                                    "ATTR_PARAMETER": "install"
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "ecore_command",
+                                "id": "LDK7/1rev~gYklSmQ[7W",
+                                "fields": {
+                                  "ATTR_NAME": "run"
+                                },
+                                "inputs": {
+                                  "CONT_TOOL": {
+                                    "block": {
+                                      "type": "ecore_tool_value",
+                                      "id": "6[+jXE$#rbL[G5Rxm}@]",
+                                      "fields": {
+                                        "ATTR_NAME": "yarn"
+                                      }
+                                    }
+                                  },
+                                  "CONT_PARAMETER": {
+                                    "block": {
+                                      "type": "ecore_parameter",
+                                      "id": "D7#,bnP[/zaV#ZfhcM0A",
+                                      "fields": {
+                                        "ATTR_PARAMETER": "test"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "ecore_job",
+                  "id": "-cl!,wn,~~cFVqOLiF9+",
+                  "fields": {
+                    "ATTR_NAME": "",
+                    "ATTR_ALLOWFAILURE": false,
+                    "ATTR_DESCRIPTION": ""
+                  },
+                  "inputs": {
+                    "CONT_TOOL": {
+                      "block": {
+                        "type": "ecore_tool",
+                        "id": "/y*EzcKUO}[Z}OB#rD(8",
+                        "fields": {
+                          "ATTR_NAME": "ubuntu-latest "
+                        }
+                      }
+                    },
+                    "CONT_COMMAND": {
+                      "block": {
+                        "type": "ecore_command",
+                        "id": "C=LI=JQ`x1RlM%gkIupr",
+                        "fields": {
+                          "ATTR_NAME": "default_command"
+                        },
+                        "inputs": {
+                          "CONT_TOOL": {
+                            "block": {
+                              "type": "ecore_tool_value",
+                              "id": "j|7H#zmGO_376G)LJLN]",
+                              "fields": {
+                                "ATTR_NAME": "actions/checkout@v4"
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "ecore_command",
+                            "id": "?cv6rVbK5;CJtgv2Fa#:",
+                            "fields": {
+                              "ATTR_NAME": ""
+                            },
+                            "inputs": {
+                              "CONT_TOOL": {
+                                "block": {
+                                  "type": "ecore_tool_value",
+                                  "id": "aOqRT(w{wt-DF)){Tkv0",
+                                  "fields": {
+                                    "ATTR_NAME": " akhileshns/heroku-deploy@v3.12.12"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
