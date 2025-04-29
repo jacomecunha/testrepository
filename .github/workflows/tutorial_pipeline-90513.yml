@@ -1,0 +1,31 @@
+# Generated CI/CD Pipeline YAML
+# This YAML is compatible with GitHub Actions
+
+# Pipeline: tutorial_pipeline
+name: tutorial_pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_test:
+    # Build and test the instalation
+    runs-on: ubuntu-latest
+    steps:
+            - name: command_23463
+              uses: actions/checkout@v4
+            - name: command_98618
+              uses: actions/setup-node@v3
+              with:
+                        node-version: "18"
+            - name: run
+              run: yarn install
+            - name: run
+              run: yarn test
+  job_10026:
+    runs-on: ubuntu-latest 
+    steps:
+            - name: default_command
+              uses: actions/checkout@v4
+            - name: command_63001
+              uses:  akhileshns/heroku-deploy@v3.12.12
